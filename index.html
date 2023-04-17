@@ -30,16 +30,38 @@
 
         <div class="flex-child-left">
         <h2>Flex Column 1</h2>
+        <input class="text-input" type="text" name="input-texto" id="inputtexto" placeholder="Ingrese el texto aqui">
+            <div class="left-button">
+                <p>Sólo letra minusculas y sin acento</p>
+                <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
+                <button type="button" id="btn-desencriptar" onclick="desencriptar()">desencriptar!</button>
+            </div>
         </div>
         
         <div class="flex-child-right">
-        <h2>Flex Column 2</h2>
+            <img src="img/Muñeco.png" id="imgDer">
+            <h1 id="texto">Ningún mensaje fue encontrado</h1>
+            <textarea id="texto2" name="name" rows="8" cols="80">Ingresa el texto que desees encriptar o desenciptar.</textarea>
+            <button type="button" id="copiar" onclick="copiar()">¡Copiar!</button>
         </div>
+
         
     </div>
 
 
     <footer id="footer" class="footer">
+        <div class="container_footer">
+            <div class="row">
+                <div class="four-columns">
+                        <img src="img/Logo.png" id="logo">
+                        <h2>Jenny Alexandra Munera Serna</h2>
+                        <a href="https://www.linkedin.com/in/jenny-alexandra-munera-serna-8938a71a7/"><img src="img/linkedin.png" alt="linkedin" style="width:60px;height:60px;"></a>
+                        <a href="https://www.instagram.com/jennymunera94/"><img src="img/Instagram.png" alt="linkedin" style="width:60px;height:60px;"></a>
+                        <a href="https://github.com/jennymunera"><img src="img/GitHub.png" alt="linkedin" style="width:60px;height:60px;"></a>        
+                </div>
+                    
+            </div>
+        </div>
     </footer>
 
 

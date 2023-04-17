@@ -5,14 +5,20 @@
 }
 body{
     position: relative;
-    background: #F3F5FC;;
+    background-color: #E5E5E5;
+    opacity: 0.6;
+    background-image: radial-gradient(#000000 0.4px, #E5E5E5 0.4px);
+    background-size: 8px 8px;
 }
 
 .container_header {
     width: 100%;
     height: 100%;
-    background: #d3ebf7;
     display: inline-block;
+
+    background-color: #ecddcc;
+    background-image: radial-gradient(#000000 0.4px, #ecddcc 0.4px);
+    background-size: 8px 8px;
 }
 
 @media (min-width: 750px) {
@@ -38,12 +44,14 @@ body{
     margin-bottom: 20px;
     
 }
+
+
 .flex-container {
     display: flex;
 }
 
 .flex-child-left{
-    flex: 1;
+    flex: 2;
     flex-direction: column;
     align-items: flex-start;
     border: 2px solid rgb(142, 236, 147);
@@ -52,12 +60,12 @@ body{
 }  
 
 .flex-child-right {
-    flex: 1;
+    flex: 2;
     border: 2px solid rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 50px;
+    width: 100px;
     height: 700px;
     top: 100px;
     background: #FFFFFF;
@@ -71,7 +79,23 @@ body{
     margin-right: 20px;
 } 
 
-@media (min-width: 768px) {
+@media (max-width: 640px) {
+    /* on screens 640px and wider, make the .row element a flexbox */
+    .flex-container {
+        display: flex;
+        /* wrap columns if they are too wide for one line */
+        flex-wrap: wrap;
+    }
+    /* make all columns consume half the row width */
+    .flex-child-left {
+        flex-basis: 50%;
+    }
+    .flex-child-right {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1280px){
     /* on screens 768px and wider, make the .row element a flexbox */
     .flex-container {
         display: flex;
@@ -105,3 +129,24 @@ body{
 } 
 
 
+
+footer{
+    background-color: #ecddcc;
+    background-image: radial-gradient(#000000 0.4px, #ecddcc 0.4px);
+    background-size: 8px 8px;
+}
+
+@media (min-width: 750px) {
+    footer {
+        text-align: center;
+    }
+}
+
+
+.footer .four-columns{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    vertical-align: middle; 
+}
