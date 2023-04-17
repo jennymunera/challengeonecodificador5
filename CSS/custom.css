@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    position: relative;
+    background: #F3F5FC;;
+}
+
+.container_header {
+    width: 100%;
+    height: 100%;
+    background: #d3ebf7;
+    display: inline-block;
+}
+
+@media (min-width: 750px) {
+    header {
+        text-align: left;
+    }
+}
+
+.logo {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.flex-container {
+    display: flex;
+}
+
+.flex-child-left{
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid rgb(142, 236, 147);
+    top: 100px;
+    height: 700px;
+}  
+
+.flex-child-right {
+    flex: 1;
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50px;
+    height: 700px;
+    top: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+@media (min-width: 768px) {
+    /* on screens 768px and wider, make the .row element a flexbox */
+    .flex-container {
+        display: flex;
+        /* wrap columns if they are too wide for one line */
+        flex-wrap: wrap;
+    }
+    /* make all columns consume half the row width */
+    .flex-child-left {
+        flex-basis: auto;
+    }
+    .flex-child-right {
+        flex-basis: auto;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    /* on screens 1200px and wider... */
+    .flex-child-left {
+        /* reset flex-basis to automatic sizing based on content*/
+        flex-basis: auto;
+        /* grow all columns equally */
+        flex-grow: 2;
+    }
+    .flex-child-right {
+        /* reset flex-basis to automatic sizing based on content*/
+        flex-basis: auto;
+        /* grow all columns equally */
+        flex-grow: 2;
+    }
+} 
+
+
