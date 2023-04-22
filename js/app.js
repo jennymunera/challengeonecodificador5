@@ -5,25 +5,45 @@
 //o - ober
 //u - ufat
 
-document.addEventListener("DOMContentLoaded", function(event) {
+// variables globales
+const ingresartexto = document.querySelector('#inputtexto');
+const encriptar = document.querySelector('#btn-encriptar');
+const desencriptar = document.querySelector('#btn-desencriptar');
+const copiar = document.querySelector('#btn-copiar');
+const mostrartexto = document.querySelector('#texto2');
 
-    const ingresartexto = document.querySelector('#inputtexto');
-    const encriptar = document.querySelector('#btn-encriptar');
-    const desencriptar = document.querySelector('#btn-desencriptar');
-    const copiar = document.querySelector('#btn-copiar');
-    const mostrartexto = document.querySelector('#texto2');
 
+// eventos
+eventListeners();
+
+function eventListeners() {
+    // inicio de la aplicacion y deshabilitar los botones
+    document.addEventListener('DOMContentLoaded', inicioApp);
+
+    // campos de texto en la pagina 
     ingresartexto.addEventListener('input', validar);
     ingresartexto.addEventListener('input', mostrar);
+    ingresartexto.addEventListener('blur', mostraralertas);
+
+    // botones
     encriptar.addEventListener('click', encriptar);
     desencriptar.addEventListener('click', desencriptar);
     copiar.addEventListener('click', copiar);
-    ingresartexto.addEventListener('blur', mostraralertas);
+    
+    }
 
 
+// funciones 
+function inicioApp() {
+    // deshabilitar el boton de encriptar y desencriptar
+    encriptar.disabled = true;
+    desencriptar.disabled = true;
+}
 
 
     function validar(e) {
+
+        // validar que el campo no este vacio 
         if (ingresartexto.value.length > 0) {
             encriptar.disabled = false;
             desencriptar.disabled = false;
@@ -31,60 +51,46 @@ document.addEventListener("DOMContentLoaded", function(event) {
             encriptar.disabled = true;
             desencriptar.disabled = true;
         }
-
-        if(validarmayuscula(e.target.value)==true){
-            mostraralertas('No se permiten mayusculas',e.target.parentElement);
+        //validar que no se ingresen numeros, mayusculas y caracteres especiales
+        if(validarsolominuscula(e.target.value)==false){
+            mostraralertas('el texto es invalido debe ingresarse solo letras minusculas,no se permiten las mayusculas, ni los caracteres especiales ni los numeros',e.target.parentElement);
             encriptar.disabled = false;
             desencriptar.disabled = false;
             return;
         }
-        if(validarcaracteres(e.target.value)==true){
-            mostraralertas('No se permiten caracteres especiales',e.target.parentElement);
-            encriptar.disabled = false;
-            desencriptar.disabled = false;
-            return;
-        }
-        //FALTA AGREGAR IF PARA QUE NO SE PUEDAN INGRESAR NUMEROS
-        // FALTA AGREGAR IF PARA CUANDO SE CUMPLAN TODAS LAS CONDICIONES Y
-        //SE MUESTREN TODAS LAS ALERTAS 
+        
         limpiaralertas(e.target.parentElement);
     }
 
 
 
-    function mostraralertas(mensaje,referencia){
+function mostraralertas(mensaje,referencia){
         limpiaralertas(referencia);   
     
         const error= document.createElement('p');
         error.textContent = mensaje;
         error.classList.add('alerta');
         referencia.appendChild(error);
-    }
+
+}
     
 
-    function limpiaralertas(referencia){
+function limpiaralertas(referencia){
         const alertas = referencia.querySelector('.alerta');
         if(alertas){
             alertas.remove();
         }
-    }
+}
 
-
-    function validarmayuscula(e){
-        const textoMayus = /^[A-Z]+$/;
-        const resultado = textoMayus.test(ingresartexto.value);
+/// funcion para validar el texto 
+function validarsolominuscula(e){
+        const textoMinuscula = /^[a-z]+$/;
+        const resultado = textoMinuscula.test(ingresartexto.value);
         return resultado;
-    }
+}
 
 
-    function validarcaracteres(e){
-        const textoCaracteres = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-        const resultado = textoCaracteres.test(ingresartexto.value);
-        return resultado;
-    }
 
-
-});
 
 
 
