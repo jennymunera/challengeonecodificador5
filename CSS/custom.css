@@ -19,7 +19,7 @@ body{
     margin: 0 20px;
     display: grid;
     grid-gap: 10px;
-} 
+}
 
 .container_header {
     margin: auto;
@@ -67,20 +67,24 @@ body{
 
 .input_container{
     width: 100%;
-    height: 65%;
+    height: 60%;
 }
 
-.input_container input{
+.input_container textarea{
     background: #F3F5FC;
     color: #0A3871;
     border: none;
     resize: none;
     outline: none;
-    width: 95%;
+    width: 100%;
     height: 95%;
     line-height: 150%;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
+
+    max-width: 100%;
+    font-stretch: 50%;
+    
 }
 
 .alert_container{
@@ -195,10 +199,11 @@ body{
 
 
 /* responsive---------------------*/
-@media screen and (min-width: 500px){
+@media screen and (min-width: 768px){
 
     .header{
         height: 20%;
+        
     }
 
     .flex-container{
@@ -231,6 +236,7 @@ body{
     .input_container, .alert_container{
         padding-left: 3%;
     }
+
 
     .flex-child-right{
         display: flex;
@@ -274,7 +280,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 50px 0 50px;
+        padding: 0 20px 0 20px;
     }
     .copy_container{
         display: inline-block;
@@ -286,6 +292,7 @@ body{
         grid-column: 1 / -1;
         /* needed for the floated layout */
         clear: both;
+        grid-template-columns: 1fr
     }
     
     

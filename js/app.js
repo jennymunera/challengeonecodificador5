@@ -54,7 +54,7 @@ function validar(e) {
 
         //validar que no se ingresen numeros, mayusculas y caracteres especiales
         if(validarsolominuscula(e.target.value)==false){
-            mostraralertas('el texto es invalido debe ingresarse solo letras minusculas,no se permiten las mayusculas, ni los caracteres especiales ni los numeros',e.target.parentElement);
+            mostraralertas('el texto ingresado no es permitido',e.target.parentElement);
             b_encriptar.disabled = true;
             b_desencriptar.disabled = true;
             b_copiar.disabled = true;
