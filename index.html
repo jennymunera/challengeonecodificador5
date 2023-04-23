@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Challengeone_encriptador</title>
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="css/skeleton.css"> -->
+    <link rel="icon" type="image/x-icon" href="img/fav.ico">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
@@ -31,13 +30,13 @@
 
         <section class="flex-child-left">
             <div class="left">
-                <input class="text-input" type="text" name="input-texto" id="inputtexto" placeholder="Ingrese el texto aqui">
-            </div>
-            <div class="left-button">
-                <div class="section-send-details" id="details">
+                <div class="input_container">
+                    <input class="text-input" type="text" name="input-texto" id="inputtexto" placeholder="Ingrese el texto aqui">
+                </div>
+                <div class="alert_container">
                     <p><ion-icon name="information-circle-outline"></ion-icon>Sólo letra minusculas y sin acento</p>
                 </div>
-                <div class="in-section-send-btns">
+                <div class="buttons_container">
                     <button type="button" id="btn-encriptar">Encriptar</button>
                     <button type="button" id="btn-desencriptar">Desencriptar</button>
                 </div>    
@@ -45,10 +44,18 @@
         </section>
         
         <section class="flex-child-right">
-            <img src="img/Muñeco.png" id="imgDer">
-            <h1 id="texto">Ningún mensaje fue encontrado</h1>
-            <textbox id="texto2" name="name" rows="8" cols="80">Ingresa el texto que desees encriptar o desenciptar.</textbox>
-            <button type="button" id="copiar">¡Copiar!</button>
+            <div class="right">
+                <div class="img_container">
+                    <img src="img/Muñeco.png" id="imgDer">
+                </div>
+                <div class="text_container">
+                    <h1 id="texto">Ningún mensaje fue encontrado</h1>
+                    <p id="texto2" name="name" rows="8" cols="80">Ingresa el texto que desees encriptar o desenciptar.</p>
+                </div>
+                <div class="copy_container">
+                    <button type="button" id="copiar">¡Copiar!</button>
+                </div>
+            </div>
         </section>
 
     </main>
