@@ -35,6 +35,7 @@ function inicioApp() {
     // deshabilitar el boton de encriptar y desencriptar
     b_encriptar.disabled = true;
     b_desencriptar.disabled = true;
+    b_copiar.disabled = true;
 }
 
 
@@ -44,9 +45,11 @@ function validar(e) {
         if (ingresartexto.value.length > 0) {
             b_encriptar.disabled = false;
             b_desencriptar.disabled = false;
+            b_copiar.disabled = true;
         } else {
             b_encriptar.disabled = true;
             b_desencriptar.disabled = true;
+            b_copiar.disabled = true;
         }
 
         //validar que no se ingresen numeros, mayusculas y caracteres especiales
@@ -54,6 +57,7 @@ function validar(e) {
             mostraralertas('el texto es invalido debe ingresarse solo letras minusculas,no se permiten las mayusculas, ni los caracteres especiales ni los numeros',e.target.parentElement);
             b_encriptar.disabled = true;
             b_desencriptar.disabled = true;
+            b_copiar.disabled = true;
             return;
         }
 
