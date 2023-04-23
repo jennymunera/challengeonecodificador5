@@ -1,28 +1,40 @@
-* {
+*, *:before, *:after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+
+
+body{
+    margin:auto;
+    font-style: normal;
+    font-family: 'Inter';
+    background-color: #f3f5fc;
     
 }
-body{
-    position: relative;
-    background-color: #f3f5fc;
-    background-size: 8px 8px;
-}
+
+.wrapper {
+    max-width: 940px;
+    margin: 0 20px;
+    display: grid;
+    grid-gap: 10px;
+} 
 
 .container_header {
     margin: auto;
     width: 100%;
     height: 100%;
     display: inline-block;
-
+    overflow: hidden;
+    padding: 10px 10px;
     background-image: linear-gradient(to right top, #77d8f9, #78d2fb, #7bccfb, #81c6fb, #88bff9, #91bef8, #9abef7, #a2bdf5, #adc3f6, #b7c9f7, #c1cff8, #cad5f9);
 }
 
-
 .logo {
     margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -37,169 +49,57 @@ body{
     
 }
 
-
-.flex-container {
+.flex-container{
     display: flex;
-    flex-wrap: wrap;
-    width:100%;
-    padding:3rem;
-
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
 }
 
 .flex-child-left{
-    flex-direction: column;
-    align-items: flex-start;
-    top: 100px;
-    width: 60%;
-    height: 60%;
-}  
-
-.flex-child-right {
-    padding: 1rem;
-    border: 2px solid rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 30%;
-    height: auto;
-    top: 100px;
-    max-height: fit-content;
-    margin-right: 5%;
-
-    background: #FFFFFF;
-    box-shadow: 0px 24px 34px rgba(0, 0, 0, 0.25);
-    border-radius: 80px;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
-}  
-
-
-/* responsive---------------------*/
-@media (max-width: 640px) {
-    /* on screens 640px and wider, make the .row element a flexbox */
-    .flex-container {
-        display: flex;
-        /* wrap columns if they are too wide for one line */
-        flex-wrap: wrap;
-    }
-    /* make all columns consume half the row width */
-    .flex-child-left {
-        flex-basis: 50%;
-    }
-    .flex-child-right {
-        flex-basis: 50%;
-    }
 }
 
-@media (min-width: 768px) and (max-width: 1280px){
-    /* on screens 768px and wider, make the .row element a flexbox */
-    .flex-container {
-        display: flex;
-        /* wrap columns if they are too wide for one line */
-        flex-wrap: wrap;
-    }
-    /* make all columns consume half the row width */
-    .flex-child-left {
-        flex-basis: auto;
-    }
-    .flex-child-right {
-        flex-basis: auto;
-    }
+.left{
+    margin-top: 56px;
+    padding: 0 16px;
+    height: 591px; 
 }
 
-
-@media (min-width: 1200px) {
-    /* on screens 1200px and wider... */
-    .flex-child-left {
-        /* reset flex-basis to automatic sizing based on content*/
-        flex-basis: auto;
-        /* grow all columns equally */
-        flex-grow: 2;
-    }
-    .flex-child-right {
-        /* reset flex-basis to automatic sizing based on content*/
-        flex-basis: auto;
-        /* grow all columns equally */
-        flex-grow: 2;
-    }
-} 
-
-/*-----------------------*/
-
-
-.left-button{
-    margin-top: 400px;
-}
-
-
-.text-input {
-    float: left;
-    margin-left: 5%;
-    margin-top: 10%;
-    width: 90%;
-    height: 100%;
-    color: #0d68d8;
-    font-size: 20px;
-    border: none;
-    background: transparent;
-
-}
-
-#imgDer {
-
-    background: white;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 50%;
-}
-
-#texto {
-    margin-left: auto;
-    margin-right: auto;   
-    background: white;
-    text-align: center;
-    vertical-align: middle; 
-
-}
-
-#texto2 {
-    color: #0a3871; 
-    background: transparent;
-    border: 0 none;
+.input_container{
     width: 100%;
+    height: 65%;
+}
+
+.input_container input{
+    background: #F3F5FC;
+    color: #0A3871;
+    border: none;
+    resize: none;
     outline: none;
-    height: 35%;
-    overflow: auto;
-    text-align: center;
+    width: 95%;
+    height: 95%;
+    line-height: 150%;
+    font-weight: 400;
+    font-size: 32px;
 }
 
-.left-button p {
-    padding: 7.5%;
-    color: rgb(119, 129, 138);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -10px;
-    
+.alert_container{
+    object-fit: contain;
+    margin-right: 8px;
 }
 
-.in-section-send-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.buttons_container button, #copiar{
+    cursor: pointer;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 16px;
+    height: 67px;
+    border-radius: 24px;
 }
 
-.in-section-send-btns button {
-    margin-bottom: -10px;
-    margin: 0 10px; /* Opcional: agregar margen horizontal entre los botones */
-}
-
-
+.buttons_container button {
+    margin: 0 10px;
+  }
 
 #btn-encriptar {
     padding: 24px;
@@ -211,13 +111,16 @@ body{
     
 }
 
-#btn-desencriptar {
+#btn-desencriptar, #copiar{
     padding: 24px;
     width: auto;
     height: auto;
     border-radius: 24px;
     background: #d8dfe8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
 }
+
 
 #btn-encriptar:hover {
     background: #1b6bce;
@@ -225,31 +128,169 @@ body{
 #btn-desencriptar:hover {
     background: #176fda;
 }
+#copiar:hover {
+    background: #176fda;
+}
 
 #btn-encriptar:disabled,
 #btn-encriptar[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
 #btn-desencriptar:disabled,
 #btn-desencriptar[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
 
 #copiar {
-    margin-left: 33%;
-    margin-top: 90%;
-    padding: 24px;
-    width: 40%;
-    height: 10%;
-    background:#d8dfe8;
-    border-radius: 24px; 
-    display: none;
-
+    width: 100%;
 }
+
+
+.flex-child-right{
+    margin: 50px 40px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    height: 500px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    
+}
+
+#copiar{
+    display:none;
+}
+
+.text_container{
+    padding: 20px;
+    word-wrap: break-word;
+    height: 70%;
+    text-align: center;
+}
+
+.copy_container{
+    justify-content: center;
+    padding: 30px;
+}
+
+.text_container p{
+    overflow: auto;
+    max-height: 100%;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #495057;
+    overflow-x: hidden;
+}
+
+
+
+/* responsive---------------------*/
+@media screen and (min-width: 500px){
+
+    .header{
+        height: 20%;
+    }
+
+    .flex-container{
+        flex-direction: row;
+        height: 100vh;
+        justify-content: space-between;
+    }
+    
+    .wrapper {
+        margin: 0 auto;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .flex-container{
+        flex-direction: row;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+
+    .flex-child-left{
+        width: 50%;
+    }
+
+    .input_container{
+        padding-top: 100px;
+        height: 100%;
+    }
+
+    .input_container, .alert_container{
+        padding-left: 3%;
+    }
+
+    .flex-child-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+        height: 85%;
+    }
+
+    .left{
+        height: 50%;
+    }
+
+    .right{
+        height: 70%;
+    }
+
+    .buttons_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .buttons_container button{
+        width: 332px;
+        margin: 0 5px;
+    }
+
+    .img_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .img_container #imgDer{
+        display: inline-block;
+        width: 60%;
+        height: 60%;
+    }
+
+    .text_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 50px 0 50px;
+    }
+    .copy_container{
+        display: inline-block;
+        justify-content: center;
+        
+
+    }
+    .header, .footer {
+        grid-column: 1 / -1;
+        /* needed for the floated layout */
+        clear: both;
+    }
+    
+    
+}
+/*-----------------------*/
 
 
 
